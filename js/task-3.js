@@ -1,35 +1,35 @@
-class Storage {
-  constructor (items) {
-    this.items = items;
-  }
+const images = [
+  {
+    url:
+      'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'White and Black Long Fur Cat',
+  },
+  {
+    url:
+      'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+  },
+  {
+    url:
+      'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Group of Horses Running',
+  },
+];
 
-  getItems () {
-    return this.items;
-  }
 
-  addItem(item) {
-    this.items.push(item);
-  }
 
-  removeItem(item) {
-    if (this.items.includes(item)) {
-    this.items.splice(this.items.indexOf(item), 1);
-    }
-  }
-}
+// const listItems = images.map(image => {
+//   `<li class="item"><img src="${image.url}" alt="${image.alt}"></li>`
+// });
 
-const storage = new Storage([
-  'Нанитоиды',
-  'Пролонгер',
-  'Железные жупи',
-  'Антигравитатор',
-]);
+// allListItems = listItems.join('');
+// const galleryRef = document.querySelector('#gallery');
 
-const items = storage.getItems();
-console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
+// galleryRef.insertAdjacentHTML('afterbegin', allListItems);
 
-storage.addItem('Дроид');
-console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
+const tagStringArr = images.map(
+  image => `<li class="item"><img src="${image.url}" alt="${image.alt}"></li>`,
+);
 
-storage.removeItem('Пролонгер');
-console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
+const galleryRef = document.querySelector('#gallery');
+galleryRef.insertAdjacentHTML('afterbegin', tagStringArr.join(''));

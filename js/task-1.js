@@ -1,25 +1,24 @@
-const Account = function ({login, email}) {
-    this.login = login;
-    this.email = email;
-};
+// Напиши скрипт, который выполнит следующие операции.
 
-Account.prototype.getInfo = function () {
-    console.log(`Login: ${this.login}, Email: ${this.email}`);
-};
+// Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item. Получится 'В списке 3 категории.'.
+
+// Для каждого элемента li.item в списке ul#categories, 
+// найдет и выведет в консоль текст заголовка элемента (тега h2)
+//  и количество элементов в категории (всех вложенных в него элементов li).
+
+// Например для первой категории получится:
+
+// Категория: Животные
+// Количество элементов: 4
+
+  const categoriesRef = document.querySelector('#categories');
+  const categoriesItems = categoriesRef.children;
+  const categoriesItemsQuantity = categoriesItems.length;
+  console.log(`В списке ${categoriesItemsQuantity} категории.`);
 
 
-console.log(Account.prototype.getInfo); // function
-
-const mango = new Account({
-  login: 'Mangozedog',
-  email: 'mango@dog.woof',
-});
-
-mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
-
-const poly = new Account({
-  login: 'Poly',
-  email: 'poly@mail.com',
-});
-
-poly.getInfo(); // Login: Poly, Email: poly@mail.com
+  const items = Array.from(categoriesItems);
+  items.forEach(item => {
+    console.log(` Категория: ${item.querySelector('h2').textContent}.`);
+    console.log(`Количество элементов: ${item.querySelector('ul').children.length}`);
+  });
