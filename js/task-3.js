@@ -16,20 +16,16 @@ const images = [
   },
 ];
 
-
-
-// const listItems = images.map(image => {
-//   `<li class="item"><img src="${image.url}" alt="${image.alt}"></li>`
-// });
-
-// allListItems = listItems.join('');
-// const galleryRef = document.querySelector('#gallery');
-
-// galleryRef.insertAdjacentHTML('afterbegin', allListItems);
-
-const tagStringArr = images.map(
-  image => `<li class="item"><img src="${image.url}" alt="${image.alt}"></li>`,
-);
+const result = images.map(image => {
+  const listItem = document.createElement('li');
+  listItem.insertAdjacentHTML('afterbegin', `<img src="${image.url}" alt="${image.alt}">`);
+  listItem.classList.add('gallery__item');
+  return listItem;
+})
 
 const galleryRef = document.querySelector('#gallery');
-galleryRef.insertAdjacentHTML('afterbegin', tagStringArr.join(''));
+galleryRef.classList.add('gallery');
+galleryRef.append(...result);
+
+
+
