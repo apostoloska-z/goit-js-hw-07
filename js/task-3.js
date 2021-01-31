@@ -18,7 +18,7 @@ const images = [
 
 const result = images.map(image => {
   const listItem = document.createElement('li');
-  listItem.insertAdjacentHTML('afterbegin', `<img src="${image.url}" alt="${image.alt}">`);
+  listItem.insertAdjacentHTML('afterbegin', `<img class="image" src="${image.url}" alt="${image.alt}">`);
   listItem.classList.add('gallery__item');
   return listItem;
 })

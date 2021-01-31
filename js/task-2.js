@@ -5,7 +5,7 @@ const ingredients = [
     'Помидоры',
     'Зелень',
     'Приправы',
-  ];
+];
 
 const listItems = ingredients.map(ingredient => {
     const itemRef = document.createElement('li');

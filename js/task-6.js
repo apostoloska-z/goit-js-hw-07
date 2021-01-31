@@ -11,10 +11,9 @@
 // />
 
 const inputRef = document.querySelector('#validation-input');
-console.dir(inputRef)
 
 
-const checkSymbolQuantity = (event) => {
+const checkSymbolQuantity = () => {
     if (inputRef.value.length !== Number(inputRef.dataset.length)) {
         return inputRef.classList.add('invalid');
     } 

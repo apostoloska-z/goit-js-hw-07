@@ -1,26 +1,27 @@
-.gallery{
-    display: flex; 
+.gallery {
+    display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
+    list-style: none;
 }
 
 .gallery__item {
-    display: flex; 
-    height: 250px;
-    width: 450px;
+    margin-right: 20px;
+}
 
-    justify-content: center;
+.image {
+  height: 250px;
 }
 
 
 #validation-input {
-    border: 3px solid #bdbdbd;
-  }
+  border: 3px solid #bdbdbd;
+}
   
-  #validation-input.valid {
+#validation-input.valid {
     border-color: #4caf50;
-  }
+}
   
-  #validation-input.invalid {
-    border-color: #f44336;
-  }
+#validation-input.invalid {
+  border-color: #f44336;
+}

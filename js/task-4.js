@@ -12,11 +12,10 @@
 
 
 const counterRef = document.querySelector('#counter')
-const btnDecrementRef = counterRef.firstElementChild;
-const btnIncrementRef = counterRef.lastElementChild;
+const btnDecrementRef = document.querySelector('button[data-action = "decrement"]');
+const btnIncrementRef = document.querySelector('button[data-action = "increment"]');
 const spanRef = document.querySelector('#value');
 let counterValue = Number(spanRef.textContent);
-console.log(counterValue)
 
 const decrement = () => {
     counterValue -=1;
