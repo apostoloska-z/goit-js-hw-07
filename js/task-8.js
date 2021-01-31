@@ -39,8 +39,8 @@ function random_rgba() {
 }
 
 const createBoxes = (amount) => {
-    const emptyBoxes = [...Array(amount)];
-    emptyBoxes.map(box => {
+    const boxes = [...Array(amount)];
+    boxes.map(box => {
         box = document.createElement('div');
         box.style.width = size;
         box.style.height = size;
