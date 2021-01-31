@@ -41,7 +41,7 @@ function random_rgba() {
 const createBoxes = (amount) => {
     const boxes = [...Array(amount)];
     boxes.map(box => {
-        box = document.createElement('div');
+        box = document.createElement('div');        
         box.style.width = size;
         box.style.height = size;
         size += 10;
@@ -59,6 +59,7 @@ const destroyBoxes = () => {
     while (boxesRef.firstChild) {
     boxesRef.removeChild(boxesRef.lastChild)
     }
+    size = 30;
 }
 
 btnRenderRef.addEventListener('click', getNumberOfBoxes);
