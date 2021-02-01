@@ -11,8 +11,12 @@ const inputRef = document.querySelector('#name-input');
 const spanRef = document.querySelector('#name-output');
 
 const nameSubstitute = () => {
-    if (!inputRef.value) return spanRef.textContent = 'незнакомец';
-    return spanRef.textContent = inputRef.value;
-}
+    if (!inputRef.value) {
+        spanRef.textContent = 'незнакомец';
+        return;
+    };
+    spanRef.textContent = inputRef.value;
+};
+
 
 inputRef.addEventListener('input', nameSubstitute);

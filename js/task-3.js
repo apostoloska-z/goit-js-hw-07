@@ -16,16 +16,15 @@ const images = [
   },
 ];
 
-const result = images.map(image => {
-  const listItem = document.createElement('li');
-  listItem.insertAdjacentHTML('afterbegin', `<img class="image" src="${image.url}" alt="${image.alt}">`);
-  listItem.classList.add('gallery__item');
-  return listItem;
-})
+
+const getImageLi = images.map(image => {
+  return `<li class="gallery__item"><img class="image" src="${image.url}" alt="${image.alt}"></li>`
+});
 
 const galleryRef = document.querySelector('#gallery');
 galleryRef.classList.add('gallery');
-galleryRef.append(...result);
+galleryRef.insertAdjacentHTML('afterbegin', getImageLi);
+
 
 
 
