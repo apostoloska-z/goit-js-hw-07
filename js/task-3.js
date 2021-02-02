@@ -23,7 +23,7 @@ const getImageLi = images.map(image =>
 
 const galleryRef = document.querySelector('#gallery');
 galleryRef.classList.add('gallery');
-galleryRef.insertAdjacentHTML('afterbegin', getImageLi);
+galleryRef.insertAdjacentHTML('afterbegin', getImageLi.join(''));
 
 
 
